@@ -1,7 +1,7 @@
 <h1>Nuevo Documental</h1>
 
-<%= form_with(model: @movie, url: movies_path, local: true) do |form| %>
-  <%= render 'shared/errors', object: @movie %>
+<%= form_with(model: @documentary_film, url: documentary_films_path, local: true) do |form| %>
+  <%= render 'shared/errors', object: @documentary_film  %>
 
   <div>
     <%= form.label :name %>
@@ -19,7 +19,8 @@
   </div>
 
   <div>
-    <%= form.submit "Create Movie" %>
+    <%= form.submit "Crear Documental", class: 'btn btn-warning'  %>
+    <%= link_to 'Volver atrás', documentary_films_path, class: 'btn btn-primary' %>
   </div>
 <% end %>
 

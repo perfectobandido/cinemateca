@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :series, only: [:index, :create, :new]
   resources :documentary_films, only: [:index, :create, :new]
 
+  get "/documentales/new", to: 'documentary_films#new'
   get "/documentales", to: 'documentary_films#index'
   get "/series", to: 'series#index'
   root "movies#index"
