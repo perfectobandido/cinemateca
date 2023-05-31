@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Cinemateca</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+   
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+    <%= stylesheet_link_tag 'custom', media: 'all', 'data-turbolinks-track': 'reload' %>  
+  </head>
+
+  <body>
+    <br>  <br>  <br>  <br>
+    <div class="container">
+        <%= yield %>
+    </div>
+
+
+    
+      <!--Bootstrap JS 4.2.1-->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous">
+    </script>
+
+    
+
+<nav class="navbar" style="top: 0; background-color: #00bcd4; z-index: 999;">
+      <div class="container d-flex align-items-center">
+        <%= link_to root_path, class: 'navbar-brand' do %>
+          <h1 class="navbar-title mb-0"><%= image_tag 'artfilm.jpg', alt: 'Logo' %> Cinemateca</h1>
+          
+        <% end %>
+      </div>
+</nav>
+<nav class="navbar" style="top: 15px; background-color: transparent; z-index: 9999;">
+  <div class="navbar-container">
+    <ul class="navbar-menu">
+      <li><%= link_to "Películas", movies_path %></li>
+      <li><%= link_to "Series", series_path %></li>
+      <li><%= link_to "Documentales", documentary_films_path %></li>
+    </ul>
+  </div>
+</nav>
+   
+
+  </body>
+</html>

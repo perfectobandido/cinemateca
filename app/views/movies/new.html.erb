@@ -1,0 +1,26 @@
+<h1>Nueva Película</h1>
+
+<%= form_with(model: @movie, url: movies_path, local: true) do |form| %>
+  <%= render 'shared/errors', object: @movie %>
+
+  <div>
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.label :synopsis %>
+    <%= form.text_area :synopsis %>
+  </div>
+
+  <div>
+    <%= form.label :director %>
+    <%= form.text_field :director %>
+  </div>
+
+  <div>
+    <%= form.submit "Crear Película", class: 'btn btn-warning'  %>
+    <%= link_to 'Volver atrás', movies_path, class: 'btn btn-primary' %>
+  </div>
+<% end %>
+
